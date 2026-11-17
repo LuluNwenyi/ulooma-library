@@ -48,8 +48,11 @@ a:hover { color: var(--orange); }
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
+  color: #fff;
+  border-color: var(--orange);
+  background: var(--orange);
 }
-.get-card:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+.get-card:hover { background: #b94a04; color: #fff; border-color: #b94a04; }
 .main-nav {
   height: 72px;
   display: grid;
