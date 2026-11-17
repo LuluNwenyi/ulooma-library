@@ -127,8 +127,8 @@ a:hover { color: var(--orange); }
 @media (max-width: 700px) {
   body {
     min-height: 1102px;
-    font-size: 10px;
-    line-height: 20px;
+    font-size: clamp(11px, 3.05vw, 12px);
+    line-height: 1.85;
   }
   .header-top {
     height: clamp(120px, 36.9vw, 145px);
@@ -144,13 +144,13 @@ a:hover { color: var(--orange); }
   .get-card {
     width: min(143px, 43vw);
     height: clamp(44px, 12.47vw, 49px);
-    font-size: 9px;
-    line-height: 12px;
+    font-size: 10px;
+    line-height: 13px;
     text-underline-offset: 1px;
   }
   .main-nav {
     height: clamp(44px, 12.72vw, 50px);
-    font-size: clamp(8px, 2.3vw, 9px);
+    font-size: clamp(9px, 2.55vw, 10px);
     line-height: 12px;
   }
   .main-nav a { padding-inline: 6px; text-underline-offset: 1px; }
@@ -159,11 +159,11 @@ a:hover { color: var(--orange); }
     width: 100%;
     padding: 34px 0 28px;
     background: var(--white);
-    font-size: 10px;
-    line-height: 20px;
+    font-size: clamp(11px, 3.05vw, 12px);
+    line-height: 1.85;
   }
   .guidelines-content > * {
-    width: min(303px, calc(100% - 48px));
+    width: min(340px, calc(100% - 32px));
     margin-inline: auto;
   }
   .guidelines-content p { margin-bottom: 16px; }
@@ -177,18 +177,17 @@ a:hover { color: var(--orange); }
     left: -7px;
     top: -3px;
     padding-inline: 2px;
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 24px;
   }
-  .guidelines-content blockquote p { margin-bottom: 12px; }
-  .guidelines-content .signoff { line-height: 20px; }
+  .guidelines-content blockquote p { margin-bottom: 14px; }
+  .guidelines-content .signoff { line-height: 1.85; }
   .site-footer { min-height: 77px; padding: 20px 10px; }
-  .site-footer p { font-size: 9px; line-height: 12px; }
+  .site-footer p { font-size: clamp(9px, 2.55vw, 10px); line-height: 14px; }
 }
 
 @media (max-width: 350px) {
-  .main-nav { font-size: 8px; }
-  .guidelines-content > * { width: calc(100% - 40px); }
+  .main-nav { font-size: 9px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
