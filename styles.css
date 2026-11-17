@@ -1,0 +1,196 @@
+:root {
+  --paper: #f1f1ed;
+  --white: #fff;
+  --ink: #242321;
+  --orange: #d65300;
+  --font: "Courier Prime", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; background: var(--paper); scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.9 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:hover { color: var(--orange); }
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 10; padding: 8px 12px; background: var(--ink); color: #fff; }
+.skip-link:focus { left: 8px; }
+
+/* Full-bleed desktop rules, with the reading column kept comfortable. */
+.site-header { width: 100%; flex: none; background: var(--paper); }
+.header-top {
+  height: 184px;
+  padding: 0 max(6vw, calc((100vw - 1200px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ink);
+}
+.brand-mark { position: relative; display: block; width: 60px; height: 74px; overflow: hidden; }
+.brand-mark img { position: absolute; top: -40px; left: -30px; width: 120px; height: 156px; max-width: none; }
+.get-card {
+  width: 220px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.get-card:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+.main-nav {
+  height: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--ink);
+  font-size: 15px;
+  line-height: 20px;
+}
+.main-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  text-align: center;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.main-nav a + a { border-left: 1px solid var(--ink); }
+.main-nav a:hover { background: #e9e6df; color: var(--orange); }
+
+.guidelines-content {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 64px 24px 76px;
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: .005em;
+}
+.guidelines-content > * { width: min(700px, 100%); margin-inline: auto; }
+.guidelines-content p { margin-top: 0; margin-bottom: 24px; }
+.guidelines-content strong { font-weight: 700; }
+.guidelines-content a, .guidelines-content .underlined-label {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.guidelines-content a:hover { color: var(--orange); }
+.guidelines-content blockquote {
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  padding: 0 0 0 24px;
+  border-left: 2px solid #b8b8b8;
+}
+.guidelines-content blockquote::before {
+  content: "“";
+  position: absolute;
+  left: -9px;
+  top: -3px;
+  padding: 0 3px;
+  background: var(--white);
+  color: #b8b8b8;
+  font: 700 27px/30px Georgia, serif;
+}
+.guidelines-content blockquote p { margin-top: 0; margin-bottom: 20px; }
+.guidelines-content blockquote p:last-child { margin-bottom: 0; }
+.guidelines-content em { font-style: italic; }
+.guidelines-content .signoff { margin-bottom: 0; }
+
+.site-footer {
+  min-height: 110px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--paper);
+  text-align: center;
+}
+.site-footer p { margin: 0; font-size: 14px; line-height: 20px; font-weight: 700; }
+
+/* Figma's 393px-wide frame becomes a fluid, naturally scrolling phone layout. */
+@media (max-width: 700px) {
+  body {
+    min-height: 1102px;
+    font-size: 10px;
+    line-height: 20px;
+  }
+  .header-top {
+    height: clamp(120px, 36.9vw, 145px);
+    padding: 0 clamp(16px, 6.1vw, 24px) 0 clamp(24px, 11.45vw, 45px);
+  }
+  .brand-mark { width: clamp(29px, 8.65vw, 34px); height: clamp(40px, 11.7vw, 46px); }
+  .brand-mark img {
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 193.5%;
+  }
+  .get-card {
+    width: min(143px, 43vw);
+    height: clamp(44px, 12.47vw, 49px);
+    font-size: 9px;
+    line-height: 12px;
+    text-underline-offset: 1px;
+  }
+  .main-nav {
+    height: clamp(44px, 12.72vw, 50px);
+    font-size: clamp(8px, 2.3vw, 9px);
+    line-height: 12px;
+  }
+  .main-nav a { padding-inline: 6px; text-underline-offset: 1px; }
+  .guidelines-content {
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 34px 0 28px;
+    background: var(--white);
+    font-size: 10px;
+    line-height: 20px;
+  }
+  .guidelines-content > * {
+    width: min(303px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+  .guidelines-content p { margin-bottom: 16px; }
+  .guidelines-content blockquote {
+    margin-top: 10px;
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left-width: 1.5px;
+  }
+  .guidelines-content blockquote::before {
+    left: -7px;
+    top: -3px;
+    padding-inline: 2px;
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .guidelines-content blockquote p { margin-bottom: 12px; }
+  .guidelines-content .signoff { line-height: 20px; }
+  .site-footer { min-height: 77px; padding: 20px 10px; }
+  .site-footer p { font-size: 9px; line-height: 12px; }
+}
+
+@media (max-width: 350px) {
+  .main-nav { font-size: 8px; }
+  .guidelines-content > * { width: calc(100% - 40px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
