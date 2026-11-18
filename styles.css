@@ -94,6 +94,10 @@ a:hover { color: var(--orange); }
 }
 .guidelines-copy { grid-column: 1; grid-row: 1; width: 100%; text-align: left; }
 .guidelines-copy [id] { scroll-margin-top: 24px; }
+.home-page .guidelines-content > blockquote {
+  width: min(652px, calc(100% - 48px));
+  margin-inline: auto;
+}
 .guidelines-toc {
   grid-column: 2;
   grid-row: 1;
@@ -123,7 +127,9 @@ a:hover { color: var(--orange); }
 .guidelines-content blockquote {
   position: relative;
   margin-top: 16px;
+  margin-right: 24px;
   margin-bottom: 24px;
+  margin-left: 24px;
   padding: 0 0 0 24px;
   border-left: 2px solid #b8b8b8;
 }
@@ -141,6 +147,11 @@ a:hover { color: var(--orange); }
 .guidelines-content blockquote p:last-child { margin-bottom: 0; }
 .guidelines-content em { font-style: italic; }
 .guidelines-content .signoff { margin-bottom: 0; }
+.guidelines-callout {
+  padding: 14px 18px;
+  border-left: 3px solid var(--orange);
+  background: #fff4e9;
+}
 .back-to-top {
   position: fixed;
   right: max(24px, calc((100vw - 1100px) / 2));
@@ -255,6 +266,10 @@ a:hover { color: var(--orange); }
   }
   .mobile-toc nav a { font-weight: 400; }
   .guidelines-copy { width: 100%; }
+  .home-page .guidelines-content > blockquote {
+    width: min(292px, calc(100% - 80px));
+  }
+  .guidelines-callout { padding: 10px 12px; border-left-width: 2px; }
   .guidelines-content p { margin-bottom: 16px; }
   .guidelines-content blockquote {
     margin-top: 10px;
